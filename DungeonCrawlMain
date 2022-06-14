@@ -1,0 +1,99 @@
+from random import random
+from math import ceil
+Loot = 0
+Health = 10
+Monster = False
+TotalLoot = 0
+
+print('A Generic Dungeon Game By Nathan Lang')
+print( 'Type Help For Help')
+    
+while True:
+    Command = input('> ')
+    if Command == 'Help' :
+        print( 'Welcome To The Help Menu!' )
+        print( 'Here Are Commands The Game Uses:')
+        print( 'Restore Health')
+        print( 'To The Next Room!')
+        print( 'Fight')
+        print( 'Show Stats')
+        print( 'If This Is Your First Time, Use To The Next Room!')
+    
+    if Command == 'To The Next Room!' and Monster != True:
+        Walls = ceil(random()*10)
+        if Walls == 1 :
+            print('The Walls Are Stone')
+        if Walls == 2 :
+            print('The Walls Are Dirt')
+        if Walls == 3 :
+            print('The Walls Are Wood')
+        if Walls == 4 :
+            print('The Walls Are Too Mossy To See')
+        if Walls == 5 :
+            print('The Walls are Stone, Held Up By Beams')
+        if Walls == 6 :
+            print('The Walls Are Dirt, Held Up By Beams')
+        if Walls == 7 :
+            print('The Walls Are Wood, Held Up By Beams')
+        if Walls == 8 :
+            print('The Walls Are Too Mossy To See But Are Held Up With Beams')
+        if Walls == 9 or Walls == 10:
+            print('You Arent Paying Attention To The Walls')
+        
+        MonsterChance = ceil(random()*10)
+        if MonsterChance >= 5:
+            Monster = True
+            if MonsterChance == 5 :
+                print('The Monster Is A Skeleton!' )
+                MonsterHP = 1
+            if MonsterChance == 6 :
+                print('The Monster Is A Mimic!')
+                MonsterHP = 4
+            if MonsterChance == 7 :
+                print('The Monster Is A Dragon!')
+                MonsterHP = 10
+            if MonsterChance == 8 :
+                print('The Monster Is A Knight')
+                MonsterHP = 6
+            if MonsterChance == 9 or MonsterChance == 10:
+                print('The Monster Is A Zombie')
+                MonsterHP = 2
+        else:
+            print('No Monster!')
+      
+    if Command == 'To The Next Room!' and Monster == True:
+        print('You Cant Leave, Theres A Monster!')
+      
+    if Command == 'Fight' and Monster == True :
+        if ceil(random()*10) >= 5:
+            print('Do One Damage')
+            MonsterHP = MonsterHP - 1
+            if MonsterHP == 0:
+                Monster = False
+                print('You Killed It!')
+                Loot = ceil(random()*10)
+                print('Gain ',Loot,' coins!')
+                TotalLoot = TotalLoot + Loot
+        else :
+            print('You Miss')
+    
+    if Command == 'Show Stats' :
+        print('Health is',Health)
+        print('All Your Loot Is',Loot)
+        if Monster == True :
+            print('The Monsters Health is',MonsterHP)
+    
+    if Command == 'Restore Health' :
+        print ('Health Up!')
+        Health = Health + ceil(random()*10)
+        print ('Health Is Now:', Health)
+    
+    if Monster == True and Command == 'Fight':
+        Damage = ceil(random()*4)
+        print('The Monster Attacks!')
+        print('You Take',Damage, 'Damage')
+        Health = Health - Damage
+        if Health <= 0:
+            break
+
+print('Game Over!')
