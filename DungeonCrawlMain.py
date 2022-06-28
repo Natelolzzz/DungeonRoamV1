@@ -4,8 +4,15 @@ Loot = 0
 Health = 10
 Monster = False
 TotalLoot = 0
-
-print('A Generic Dungeon Game By Nathan Lang')
+print( '______                                     ______                               __   _____  ' )
+print( '|  _  \                                    | ___ \                             /  | |  _  | ' )
+print( '| | | |_   _ _ __   __ _  ___  ___  _ __   | |_/ /___   __ _ _ __ ___   __   __`| | | |/| | ' )
+print( '| | | | | | |  _ \ / _` |/ _ \/ _ \|  _ \  |    // _ \ / _` |  _ ` _ \  \ \ / / | | |  /| | ' )
+print( '| |/ /| |_| | | | | (_| |  __/ (_) | | | | | |\ \ (_) | (_| | | | | | |  \ V / _| |_\ |_/ / ' )
+print( '|___/  \__,_|_| |_|\__, |\___|\___/|_| |_| \_| \_\___/ \__,_|_| |_| |_|   \_/  \___(_)___/  ' )
+print( '                    __/ |                                                                   ' )
+print( '                   |___/                                                                    ' )
+print('A Generic Dungeon Game By Natelolzzz')
 print( 'Type Help For Help')
     
 while True:
