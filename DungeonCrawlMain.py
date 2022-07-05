@@ -83,6 +83,13 @@ while True:
                 TotalLoot = TotalLoot + Loot
         else :
             print('You Miss')
+        
+        Damage = ceil(random()*4)
+        print('The Monster Attacks!')
+        print('You Take',Damage, 'Damage')
+        Health = Health - Damage
+        if Health <= 0:
+            break
     
     if Command == 'Show Stats' :
         print('Health is',Health)
@@ -94,13 +101,5 @@ while True:
         print ('Health Up!')
         Health = Health + ceil(random()*10)
         print ('Health Is Now:', Health)
-    
-    if Monster == True and Command == 'Fight':
-        Damage = ceil(random()*4)
-        print('The Monster Attacks!')
-        print('You Take',Damage, 'Damage')
-        Health = Health - Damage
-        if Health <= 0:
-            break
 
 print('Game Over!')
