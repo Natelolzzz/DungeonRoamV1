@@ -5,6 +5,7 @@ Health = 10
 Monster = False
 TotalLoot = 0
 PlayerDamadge = 0
+WeaponPower = 10
 print( '______                                     ______                               __   _____  ' )
 print( '|  _  \                                    | ___ \                             /  | |  _  | ' )
 print( '| | | |_   _ _ __   __ _  ___  ___  _ __   | |_/ /___   __ _ _ __ ___   __   __`| | | |/| | ' )
@@ -25,6 +26,7 @@ while True:
         print( 'To The Next Room!')
         print( 'Fight')
         print( 'Show Stats')
+        print( 'Shop')
         print( 'If This Is Your First Time, Use To The Next Room!')
     
     if Command == 'To The Next Room!' and Monster == True:
@@ -55,23 +57,23 @@ while True:
         Monster = True
         if MonsterChance == 1 or MonsterChance == 2 :
             print('The Monster Is A Skeleton!' )
-            MonsterHP = 1
+            MonsterHP = 0.1 * WeaponPower
         if MonsterChance == 3 or MonsterChance == 4 :
             print('The Monster Is A Mimic!')
-            MonsterHP = 4
+            MonsterHP = 0.4 * WeaponPower
         if MonsterChance == 5 or MonsterChance == 6:
             print('The Monster Is A Dragon!')
-            MonsterHP = 10
+            MonsterHP = 1 * WeaponPower
         if MonsterChance == 7 or MonsterChance == 8 :
             print('The Monster Is A Knight')
-            MonsterHP = 6
+            MonsterHP = 0.6 * WeaponPower
         if MonsterChance == 9 or MonsterChance == 10:
             print('The Monster Is A Zombie')
-            MonsterHP = 2
+            MonsterHP = 0.2 * WeaponPower
       
     if Command == 'Fight' and Monster == True :
         if ceil(random()*10) >= 5:
-            PlayerDamadge = ceil(random()*10)
+            PlayerDamadge = ceil(random()*WeaponPower)
             print('Do',PlayerDamadge, 'Damage')
             MonsterHP = MonsterHP - PlayerDamadge
             if MonsterHP == 0:
@@ -101,5 +103,23 @@ while True:
         print ('Health Up!')
         Health = Health + ceil(random()*10)
         print ('Health Is Now:', Health)
+        
+    if Command == 'Shop' and Monster == False:
+        print('Welcome To My Shop Traveller, May I Interest You In My Wares?')
+        print('1: Weapon Upgrade: 10 Gold')
+        print('Use Exit To Exit Shop')
+        while True:
+            Buying = input('What Am I To Buy? > ')
+            if Buying == 1 and TotalLoot >= 10:
+                print('Excellent Choice')
+                WeaponPower = WeaponPower + 1
+                TotalLoot = TotalLoot - 10
+            elif Buying == 1 and TotalLoot < 10:
+                print('You Simply Do Not Have The Money')
+            if Buying == 'Exit':
+                break
+    
+    elif Command == 'Shop' and Monster == True:
+        print('You Cant, Theres A Monster')
 
 print('Game Over!')
