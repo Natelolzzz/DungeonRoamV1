@@ -4,6 +4,7 @@ Loot = 0
 Health = 10
 Monster = False
 TotalLoot = 0
+PlayerDamadge = 0
 print( '______                                     ______                               __   _____  ' )
 print( '|  _  \                                    | ___ \                             /  | |  _  | ' )
 print( '| | | |_   _ _ __   __ _  ___  ___  _ __   | |_/ /___   __ _ _ __ ___   __   __`| | | |/| | ' )
@@ -25,6 +26,9 @@ while True:
         print( 'Fight')
         print( 'Show Stats')
         print( 'If This Is Your First Time, Use To The Next Room!')
+    
+    if Command == 'To The Next Room!' and Monster == True:
+        print('You Cant Leave, Theres A Monster!')
     
     if Command == 'To The Next Room!' and Monster != True:
         Walls = ceil(random()*10)
@@ -48,33 +52,28 @@ while True:
             print('You Arent Paying Attention To The Walls')
         
         MonsterChance = ceil(random()*10)
-        if MonsterChance >= 5:
-            Monster = True
-            if MonsterChance == 5 :
-                print('The Monster Is A Skeleton!' )
-                MonsterHP = 1
-            if MonsterChance == 6 :
-                print('The Monster Is A Mimic!')
-                MonsterHP = 4
-            if MonsterChance == 7 :
-                print('The Monster Is A Dragon!')
-                MonsterHP = 10
-            if MonsterChance == 8 :
-                print('The Monster Is A Knight')
-                MonsterHP = 6
-            if MonsterChance == 9 or MonsterChance == 10:
-                print('The Monster Is A Zombie')
-                MonsterHP = 2
-        else:
-            print('No Monster!')
-      
-    if Command == 'To The Next Room!' and Monster == True:
-        print('You Cant Leave, Theres A Monster!')
+        Monster = True
+        if MonsterChance == 1 or MonsterChance == 2 :
+            print('The Monster Is A Skeleton!' )
+            MonsterHP = 1
+        if MonsterChance == 3 or MonsterChance == 4 :
+            print('The Monster Is A Mimic!')
+            MonsterHP = 4
+        if MonsterChance == 5 or MonsterChance == 6:
+            print('The Monster Is A Dragon!')
+            MonsterHP = 10
+        if MonsterChance == 7 or MonsterChance == 8 :
+            print('The Monster Is A Knight')
+            MonsterHP = 6
+        if MonsterChance == 9 or MonsterChance == 10:
+            print('The Monster Is A Zombie')
+            MonsterHP = 2
       
     if Command == 'Fight' and Monster == True :
         if ceil(random()*10) >= 5:
-            print('Do One Damage')
-            MonsterHP = MonsterHP - 1
+            PlayerDamadge = ceil(random()*10)
+            print('Do',PlayerDamadge, 'Damage')
+            MonsterHP = MonsterHP - PlayerDamadge
             if MonsterHP == 0:
                 Monster = False
                 print('You Killed It!')
@@ -84,6 +83,7 @@ while True:
         else :
             print('You Miss')
         
+    if Command == 'Fight' and Monster == True :
         Damage = ceil(random()*4)
         print('The Monster Attacks!')
         print('You Take',Damage, 'Damage')
