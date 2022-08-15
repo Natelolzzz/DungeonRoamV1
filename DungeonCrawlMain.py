@@ -14,19 +14,19 @@ Monster = False
 TotalLoot = 0
 PlayerDamadge = 0
 WeaponPower = 10
-print( '______                                     ______                               __   _____  \n' )
-print( '|  _  \                                    | ___ \                             /  | |  _  | \n' )
-print( '| | | |_   _ _ __   __ _  ___  ___  _ __   | |_/ /___   __ _ _ __ ___   __   __`| | | |/| | \n' )
-print( '| | | | | | |  _ \ / _` |/ _ \/ _ \|  _ \  |    // _ \ / _` |  _ ` _ \  \ \ / / | | |  /| | \n' )
-print( '| |/ /| |_| | | | | (_| |  __/ (_) | | | | | |\ \ (_) | (_| | | | | | |  \ V / _| |_\ |_/ / \n' )
-print( '|___/  \__,_|_| |_|\__, |\___|\___/|_| |_| \_| \_\___/ \__,_|_| |_| |_|   \_/  \___(_)___/  \n' )
-print( '                    __/ |                                                                   \n' )
+print( '______                                     ______                               __   _____  ' )
+print( '|  _  \                                    | ___ \                             /  | |  _  | ' )
+print( '| | | |_   _ _ __   __ _  ___  ___  _ __   | |_/ /___   __ _ _ __ ___   __   __`| | | |/| | ' )
+print( '| | | | | | |  _ \ / _` |/ _ \/ _ \|  _ \  |    // _ \ / _` |  _ ` _ \  \ \ / / | | |  /| | ' )
+print( '| |/ /| |_| | | | | (_| |  __/ (_) | | | | | |\ \ (_) | (_| | | | | | |  \ V / _| |_\ |_/ / ' )
+print( '|___/  \__,_|_| |_|\__, |\___|\___/|_| |_| \_| \_\___/ \__,_|_| |_| |_|   \_/  \___(_)___/  ' )
+print( '                    __/ |                                                                   ' )
 print( '                   |___/                                                                    \n' )
 slow_type('A Generic Dungeon Game By Natelolzzz\n' )
 slow_type( 'Type Help For Help\n' )
     
 while True:
-    Command = input(' > \n' )
+    Command = input('> ' )
     if Command == 'Help' :
         slow_type( 'Welcome To The Help Menu!\n' )
         slow_type( 'Here Are Commands The Game Uses:\n' )
@@ -34,7 +34,7 @@ while True:
         slow_type( 'To The Next Room!\n' )
         slow_type( 'Fight\n' )
         slow_type( 'Show Stats\n' )
-        slow_type( 'If This Is Your First Time, Use To The Next Room!\n' )
+        slow_type( 'If This Is Your First Time, Use "To The Next Room!"\n' )
     
     if Command == 'To The Next Room!' and Monster == True:
         slow_type('You Cant Leave, Theres A Monster!\n' )
