@@ -23,17 +23,17 @@ print( '|___/  \__,_|_| |_|\__, |\___|\___/|_| |_| \_| \_\___/ \__,_|_| |_| |_| 
 print( '                    __/ |                                                                   ' )
 print( '                   |___/                                                                    \n' )
 slow_type('A Generic Dungeon Game By Natelolzzz\n' )
-slow_type( 'Type Help For Help\n' )
+slow_type( 'Type "Help" For Help\n' )
     
 while True:
     Command = input('> ' )
     if Command == 'Help' :
         slow_type( 'Welcome To The Help Menu!\n' )
         slow_type( 'Here Are Commands The Game Uses:\n' )
-        slow_type( 'Restore Health\n' )
-        slow_type( 'To The Next Room!\n' )
-        slow_type( 'Fight\n' )
-        slow_type( 'Show Stats\n' )
+        slow_type( '"Restore Health"\n' )
+        slow_type( '"To The Next Room!"\n' )
+        slow_type( '"Fight"\n' )
+        slow_type( '"Show Stats"\n' )
         slow_type( 'If This Is Your First Time, Use "To The Next Room!"\n' )
     
     if Command == 'To The Next Room!' and Monster == True:
