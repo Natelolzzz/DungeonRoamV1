@@ -84,7 +84,7 @@ while True:
             PlayerDamadge = ceil(random()*WeaponPower)
             print('Do',PlayerDamadge, 'Damage\n' )
             MonsterHP = MonsterHP - PlayerDamadge
-            if MonsterHP == 0:
+            if MonsterHP < 1:
                 Monster = False
                 slow_type('You Killed It!\n' )
                 Loot = ceil(random()*10)
