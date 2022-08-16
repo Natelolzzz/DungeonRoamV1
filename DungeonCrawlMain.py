@@ -77,17 +77,18 @@ while True:
         if MonsterChance == 9 or MonsterChance == 10:
             slow_type('The Monster Is A Zombie\n' )
             MonsterHP = 0.2 * WeaponPower
+        slow_type('Use the "Fight" command')
       
     if Command == 'Fight' and Monster == True :
         if ceil(random()*10) >= 5:
             PlayerDamadge = ceil(random()*WeaponPower)
-            slow_type('Do',PlayerDamadge, 'Damage\n' )
+            print('Do',PlayerDamadge, 'Damage\n' )
             MonsterHP = MonsterHP - PlayerDamadge
             if MonsterHP == 0:
                 Monster = False
                 slow_type('You Killed It!\n' )
                 Loot = ceil(random()*10)
-                slow_type('Gain ',Loot,' coins!\n' )
+                print('Gain ',Loot,' coins!\n' )
                 TotalLoot = TotalLoot + Loot
         else :
             slow_type('You Miss\n' )
@@ -95,20 +96,20 @@ while True:
     if Command == 'Fight' and Monster == True :
         Damage = ceil(random()*4)
         slow_type('The Monster Attacks!\n' )
-        slow_type('You Take',Damage, 'Damage\n' )
+        print('You Take',Damage, 'Damage\n' )
         Health = Health - Damage
         if Health <= 0:
             break
     
     if Command == 'Show Stats' :
-        slow_type('Health is',Health)
-        slow_type('All Your Loot Is',Loot)
+        print('Health is',Health)
+        print('All Your Loot Is',Loot)
         if Monster == True :
-            slow_type('The Monsters Health is',MonsterHP)
+            print('The Monsters Health is',MonsterHP)
     
     if Command == 'Restore Health' :
-        slow_type ('Health Up!\n' )
+        slow_type('Health Up!\n' )
         Health = Health + ceil(random()*10)
-        slow_type ('Health Is Now:', Health)
+        print('Health Is Now:', Health)
 
 slow_type('Game Over!\n' )
