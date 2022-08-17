@@ -77,7 +77,7 @@ while True:
         if MonsterChance == 9 or MonsterChance == 10:
             slow_type('The Monster Is A Zombie\n' )
             MonsterHP = 0.2 * WeaponPower
-        slow_type('Use the "Fight" command')
+        slow_type('Use the "Fight" command ')
       
     if Command == 'Fight' and Monster == True :
         if ceil(random()*10) >= 5:
