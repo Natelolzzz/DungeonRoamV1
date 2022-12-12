@@ -1,8 +1,7 @@
 # Import necessary modules
 import random
-
+import sys
 # Define some variables for the game
-max_monsters = 5
 max_hp = 20
 
 # Start the game
@@ -12,14 +11,13 @@ print("You are in a dungeon and encounter a monster!")
 while True:
     monster_hp = random.randint(1, max_hp)
     player_hp = max_hp
-    num_monsters_defeated = 0
     
     while monster_hp > 0 and player_hp > 0:
         # Print the current status of the game
         print(f"Player HP: {player_hp}, Monster HP: {monster_hp}")
     
-        # Let the player choose to attack or flee
-        action = input("Do you want to [A]ttack or [F]lee? ")
+        # Let the player choose to attack, flee, or heal
+        action = input("Do you want to [A]ttack, [F]lee, or [H]eal? ")
     
         # Attack the monster
         if action.lower() == "a":
@@ -34,7 +32,11 @@ while True:
                 player_hp -= random.randint(1, 5)
         elif action.lower() == "f":
             print("You flee from the dungeon!")
-            break
+            print("The End!)
+            exit()
+        elif action.lower() == "h":
+            print("You heal yourself!")
+            player_hp += random.randint(1, 5)
         else:
             print("Invalid action, try again.")
         
@@ -43,4 +45,4 @@ while True:
         print("You have been defeated by the monster!")
         break
     else:
-        print("You can continue fighting monsters.")
+        print("You have successfully defeated the monster and can continue fighting.")
