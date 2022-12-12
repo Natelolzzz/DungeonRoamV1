@@ -32,7 +32,7 @@ while True:
                 player_hp -= random.randint(1, 5)
         elif action.lower() == "f":
             print("You flee from the dungeon!")
-            print("The End!)
+            print("The End!")
             exit()
         elif action.lower() == "h":
             print("You heal yourself!")
