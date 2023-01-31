@@ -18,7 +18,7 @@ def drawroom():
 
 def generateroom():
     drawroom()
-    C = randint(1,3)
+    C = random.randint(1,3)
     if C == 1:
         print("It is a stone room \n")
     elif C == 2:
