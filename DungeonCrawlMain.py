@@ -57,7 +57,7 @@ while True:
             print("\nYou flee from the dungeon! \n")
             print("The End!")
             exit()
-        elif action.lower() == "h" and player_hp < 21:
+        elif action.lower() == "h" and player_hp < 20:
             print("\nYou heal yourself! \n")
             heal_amount = random.randint(1, 5)
             if heal_amount + player_hp < 21:
