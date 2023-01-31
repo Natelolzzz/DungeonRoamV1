@@ -44,7 +44,7 @@ while True:
     
         # Attack the monster
         if action.lower() == "a":
-            print("\n You attack the monster! \n")
+            print("\nYou attack the monster! \n")
             monster_hp -= random.randint(1, 5)
         
             # Check if the monster is still alive
