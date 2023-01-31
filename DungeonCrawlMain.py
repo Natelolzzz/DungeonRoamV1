@@ -50,14 +50,14 @@ while True:
             if monster_hp <= 0:
                 print("You have defeated the monster! \n")
             else:
-                print("The monster attacks you!")
+                print("The monster attacks you!\n")
                 player_hp -= random.randint(1, 5)
         elif action.lower() == "f":
             print("You flee from the dungeon! \n")
             print("The End!")
             exit()
         elif action.lower() == "h":
-            print("You heal yourself!")
+            print("You heal yourself! \n")
             player_hp += random.randint(1, 5)
         else:
             print("Invalid action, try again. \n")
