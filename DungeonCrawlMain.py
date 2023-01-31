@@ -40,32 +40,32 @@ while True:
         print(f"Player HP: {player_hp}, Monster HP: {monster_hp}")
     
         # Let the player choose to attack, flee, or heal
-        action = input("Do you want to [A]ttack, [F]lee, or [H]eal? ")
+        action = input("Do you want to [A]ttack, [F]lee, or [H]eal? > ")
     
         # Attack the monster
         if action.lower() == "a":
-            print("You attack the monster!")
+            print("You attack the monster! \n")
             monster_hp -= random.randint(1, 5)
         
             # Check if the monster is still alive
             if monster_hp <= 0:
-                print("You have defeated the monster!")
+                print("You have defeated the monster! \n")
             else:
                 print("The monster attacks you!")
                 player_hp -= random.randint(1, 5)
         elif action.lower() == "f":
-            print("You flee from the dungeon!")
+            print("You flee from the dungeon! \n")
             print("The End!")
             exit()
         elif action.lower() == "h":
             print("You heal yourself!")
             player_hp += random.randint(1, 5)
         else:
-            print("Invalid action, try again.")
+            print("Invalid action, try again. \n")
         
     # Check if the player is still alive
     if player_hp <= 0:
-        print("You have been defeated by the monster!")
+        print("You have been defeated by the monster! \n")
         break
     else:
-        print("You have successfully defeated the monster and can continue fighting.")
+        print("You have successfully defeated the monster and can continue fighting. \n")
