@@ -64,7 +64,7 @@ while True:
                 player_hp += heal_amount
             else:
                 player_hp = 20
-        elif action.lower() == "h" and player_hp > 21:
+        elif action.lower() == "h" and player_hp > 19:
             print("\nYou are at full health! \n")
         else:
             print("\nInvalid action, try again. \n")
