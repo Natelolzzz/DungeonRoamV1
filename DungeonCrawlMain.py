@@ -4,18 +4,17 @@ import sys
 # Define some variables for the game
 max_hp = 20
 C = 0
-
 def drawroom():
-    print("  _____________   ")
-    print("  |           |   ")
-    print("  |           |   ")
-    print("  |   _____   |   ")
-    print("  |   |   |   |   ")
-    print("  |___|___|___|   ")
-    print("  /           \   ")
-    print(" /             \  ")
-    print("/_______________\ \n")  
-
+    print("  _____________    ")
+    print("  |           |\   ")
+    print("  |           | \  ")
+    print("  |   _____   |  \ ")
+    print("  |   |   |   |  | ")
+    print("  |___|___|___|  | ")
+    print("  /           \  | ")
+    print(" /             \ | ")
+    print("/_______________\| \n") 
+    
 def generateroom():
     drawroom()
     C = random.randint(1,3)
