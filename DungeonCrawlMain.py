@@ -59,7 +59,11 @@ while True:
             exit()
         elif action.lower() == "h" and player_hp < 21:
             print("\nYou heal yourself! \n")
-            player_hp += random.randint(1, 5)
+            heal_amount = random.randint(1, 5)
+            if heal_amount + player_hp < 21:
+                player_hp += heal_amount
+            else:
+                player_hp = 20
         elif action.lower() == "h" and player_hp > 21:
             print("\nYou are at full health! \n")
         else:
