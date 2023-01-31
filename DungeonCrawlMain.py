@@ -4,6 +4,7 @@ import sys
 # Define some variables for the game
 max_hp = 20
 C = 0
+
 def drawroom():
     print("  _____________    ")
     print("  |           |\   ")
@@ -26,7 +27,7 @@ def generateroom():
         print("It is a brick room \n")
 
 # Start the game
-print("You are in a dungeon and encounter a monster!")
+print("You are in a dungeon and encounter a monster! \n")
 
 # Keep playing until the player defeats 10 monsters or is defeated
 while True:
@@ -36,7 +37,7 @@ while True:
     
     while monster_hp > 0 and player_hp > 0:
         # Print the current status of the game
-        print(f"Player HP: {player_hp}, Monster HP: {monster_hp}")
+        print(f"Player HP: {player_hp}, Monster HP: {monster_hp} \n")
     
         # Let the player choose to attack, flee, or heal
         action = input("Do you want to [A]ttack, [F]lee, or [H]eal? > ")
@@ -56,9 +57,11 @@ while True:
             print("\n You flee from the dungeon! \n")
             print("The End!")
             exit()
-        elif action.lower() == "h":
+        elif action.lower() == "h" and player_hp < 21:
             print("\n You heal yourself! \n")
             player_hp += random.randint(1, 5)
+        elif action.lower() == "h" and player_hp > 21:
+            print("\n You are at full health! \n")
         else:
             print("\n Invalid action, try again. \n")
         
