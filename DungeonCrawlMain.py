@@ -54,16 +54,16 @@ while True:
                 print("The monster attacks you!\n")
                 player_hp -= random.randint(1, 5)
         elif action.lower() == "f":
-            print("\n You flee from the dungeon! \n")
+            print("\nYou flee from the dungeon! \n")
             print("The End!")
             exit()
         elif action.lower() == "h" and player_hp < 21:
-            print("\n You heal yourself! \n")
+            print("\nYou heal yourself! \n")
             player_hp += random.randint(1, 5)
         elif action.lower() == "h" and player_hp > 21:
-            print("\n You are at full health! \n")
+            print("\nYou are at full health! \n")
         else:
-            print("\n Invalid action, try again. \n")
+            print("\nInvalid action, try again. \n")
         
     # Check if the player is still alive
     if player_hp <= 0:
