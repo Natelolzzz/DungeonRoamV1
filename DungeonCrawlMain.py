@@ -6,14 +6,14 @@ max_hp = 20
 C = 0
 
 def drawroom():
-    print("   /|           |\   ")
-    print("  / |           | \  ")
-    print(" /  |   _____   |  \ ")
-    print("/   |   |   |   |   \ ")
-    print("    |___|___|___|    ")
-    print("    /           \    ")
-    print("   /             \   ")
-    print("  /_______________\ \n") 
+    print("   +----------+.        ")
+    print("   |          | `.      ")
+    print("   |          |   `.    ")
+    print("   |          |     +   ")
+    print("   +----------+.    |   ")
+    print("    `.          `.  |   ")
+    print("      `.          `.|   ")
+    print("        `+----------+ \n")
     
 def generateroom():
     drawroom()
