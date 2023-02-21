@@ -28,11 +28,13 @@ def generateroom():
 # Start the game
 print("You are in a dungeon and encounter a monster! \n")
 
-# Keep playing until the player defeats 10 monsters or is defeated
+player_hp = max_hp
+
+# Keep playing
+
 while True:
     generateroom()
     monster_hp = random.randint(1, max_hp)
-    player_hp = max_hp
     
     while monster_hp > 0 and player_hp > 0:
         # Print the current status of the game
