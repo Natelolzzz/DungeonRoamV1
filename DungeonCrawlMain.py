@@ -1,6 +1,6 @@
 # Import necessary modules
 import random
-import sys
+
 # Define some variables for the game
 max_hp = 20
 random_num = 0
