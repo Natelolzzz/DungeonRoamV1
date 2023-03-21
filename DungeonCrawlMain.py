@@ -54,6 +54,7 @@ while True:
             else:
                 print("The monster attacks you!\n")
                 player_hp -= random.randint(1, 5)
+            
         elif action.lower() == "h" and player_hp < 20:
             print("\nYou heal yourself! \n")
             heal_amount = random.randint(1, 5)
@@ -61,8 +62,10 @@ while True:
                 player_hp += heal_amount
             else:
                 player_hp = 20
+              
         elif action.lower() == "h" and player_hp > 19:
             print("\nYou are at full health! \n")
+      
         elif action.lower() == "f" :
           break
         else:
