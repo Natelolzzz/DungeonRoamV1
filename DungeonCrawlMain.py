@@ -5,6 +5,8 @@ import random
 max_hp = 20
 random_num = 0
 
+#Function definitions
+
 def drawroom():
     print("   +----------+.        ")
     print("   |   ____   | `.      ")
@@ -33,6 +35,7 @@ player_hp = max_hp
 # Keep playing
 
 while True:
+    #start generation
     generateroom()
     monster_hp = random.randint(1, max_hp)
     
@@ -54,15 +57,16 @@ while True:
             else:
                 print("The monster attacks you!\n")
                 player_hp -= random.randint(1, 5)
-            
+        #Healing commmand    
         elif action.lower() == "h" and player_hp < 20:
             print("\nYou heal yourself! \n")
             heal_amount = random.randint(1, 5)
+            #Prevent over heal
             if heal_amount + player_hp < 21:
                 player_hp += heal_amount
             else:
                 player_hp = 20
-              
+        #Can't heal test
         elif action.lower() == "h" and player_hp > 19:
             print("\nYou are at full health! \n")
       
@@ -71,13 +75,16 @@ while True:
         else:
             print("\nInvalid action, try again. \n")
         
-    # Check if the player is still alive
     if action.lower() == "f" :
+      #Run!
       print("You fled in fear never to return!")
       break
     elif player_hp <= 0:
+        # Check if the player is still alive
         print("You have been defeated by the monster! \n")
         break
     else:
+        #or beat the monster
         print("You have successfully defeated the monster and can continue fighting. \n")
+#Finish
 print("The end!")
