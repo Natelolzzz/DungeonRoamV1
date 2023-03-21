@@ -3,7 +3,7 @@ import random
 import sys
 # Define some variables for the game
 max_hp = 20
-C = 0
+random_num = 0
 
 def drawroom():
     print("   +----------+.        ")
@@ -17,10 +17,10 @@ def drawroom():
     
 def generateroom():
     drawroom()
-    C = random.randint(1,3)
-    if C == 1:
+    random_num = random.randint(1,3)
+    if random_num == 1:
         print("It is a stone room \n")
-    elif C == 2:
+    elif random_num == 2:
         print("It is a wood room \n")
     else:
         print("It is a brick room \n")
