@@ -88,8 +88,6 @@ while True:
     break
   else:
     #or beat the monster
-    print(
-      "You have successfully defeated the monster and can continue fighting. \n"
-    )
+    print("You have successfully defeated the monster and can continue fighting. \n")
 #Finish
 print("The end!")
